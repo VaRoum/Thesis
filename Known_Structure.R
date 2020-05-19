@@ -89,7 +89,7 @@ for(i in 1: N_folds){
   for (j in 1:N_test){
     pred[j] <- as.character(predict(training.fit, data=test[j,!is.na(test[j,])], 
                                     
-                                    node= "NM.Hazard",prob = T, method = "parents", n=70000))
+                                    node= "NM.Hazard",prob = T, method = "parents", n=10000))
   }
   
   acc_best[i] <- sum(pred==observed)/N_test 
